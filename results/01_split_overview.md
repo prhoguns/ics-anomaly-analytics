@@ -1,0 +1,6 @@
+# How much normal and attack data is in each split?
+
+| split | sample_seconds | attack_seconds | attack_pct |
+| --- | --- | --- | --- |
+| test | 43201 | 629.0 | 1.46 |
+| train | 216001 | 0.0 | 0.0 |

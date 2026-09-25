@@ -1,0 +1,6 @@
+# How does P1 flow change during labeled attacks?
+
+| attack | samples | mean_flow | p05 | p95 |
+| --- | --- | --- | --- | --- |
+| 0 | 42572 | 202.68 | 160.06 | 226.06 |
+| 1 | 629 | 216.41 | -0.38 | 625.31 |

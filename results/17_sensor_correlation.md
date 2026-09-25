@@ -1,0 +1,6 @@
+# Do selected subsystem signals move together in normal and attack periods?
+
+| attack | samples | p1_flow_level_corr | p2_rpm_sensor_corr | p4_pressure_temp_corr |
+| --- | --- | --- | --- | --- |
+| 0 | 42572 | -0.644 | 0.669 | -0.021 |
+| 1 | 629 | 0.331 | 0.996 | -0.179 |

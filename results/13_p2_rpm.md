@@ -1,0 +1,6 @@
+# How does P2 turbine RPM change during labeled attacks?
+
+| attack | samples | mean_rpm | p05 | p95 |
+| --- | --- | --- | --- | --- |
+| 0 | 42572 | 54114.49 | 54077.0 | 54148.0 |
+| 1 | 629 | 54043.66 | 53070.4 | 54582.6 |

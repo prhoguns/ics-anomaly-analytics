@@ -1,0 +1,7 @@
+# Which plant subsystems carry labeled attack intervals?
+
+| subsystem | attack_seconds |
+| --- | --- |
+| P1 | 480.0 |
+| P2 | 149.0 |
+| P3 | 0.0 |
