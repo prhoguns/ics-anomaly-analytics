@@ -32,17 +32,17 @@ trace = con.execute('''SELECT time,reading,attack,z_score FROM scores
 trace['period'] = trace['attack'].map({0:'Normal',1:'Attack'})
 st.plotly_chart(px.scatter(trace,x='time',y='reading',color='period',
  color_discrete_map={'Normal':'#0f766e','Attack':'#dc2626'},
- title=f'{sensor} readings in selected hour (every 5 seconds)'),use_container_width=True)
+ title=f'{sensor} readings in selected hour (every 5 seconds)'),width='stretch')
 left,right = st.columns(2)
 tradeoff = con.execute((ROOT/'sql/09_threshold_tradeoff.sql').read_text()).df()
 left.plotly_chart(px.line(tradeoff,x='threshold',y=['recall_pct','alert_precision_pct'],markers=True,
- title='Simple maximum-z threshold tradeoff'),use_container_width=True)
+ title='Simple maximum-z threshold tradeoff'),width='stretch')
 outside = con.execute('''SELECT sensor,attack,100.0*AVG(outside_training_98pct::INT) outside_pct
  FROM scores WHERE split='test' GROUP BY 1,2''').df()
 outside['period'] = outside['attack'].map({0:'Normal',1:'Attack'})
 right.plotly_chart(px.bar(outside,x='sensor',y='outside_pct',color='period',barmode='group',
- title='Outside training normal range'),use_container_width=True)
+ title='Outside training normal range'),width='stretch')
 st.subheader('Labeled attack episodes')
-st.dataframe(episodes,use_container_width=True,hide_index=True)
+st.dataframe(episodes,width='stretch',hide_index=True)
 st.caption('A high sensor deviation is an investigation cue, not proof of an attack. Training and test are separate operating periods; the threshold chart is descriptive, not a production detector.')
 con.close()
