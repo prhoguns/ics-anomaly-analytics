@@ -1,8 +1,14 @@
 # Industrial Control System Anomaly Analytics
 
+[![CI](https://github.com/prhoguns/ics-anomaly-analytics/actions/workflows/ci.yml/badge.svg)](https://github.com/prhoguns/ics-anomaly-analytics/actions/workflows/ci.yml)
+
 Eighteen SQL questions and an interactive dashboard for the [HAI 21.03 industrial control security dataset](https://github.com/icsdataset/hai). This project compares selected sensor readings with a normal training baseline, locates labeled attack episodes, and measures the workload created by simple deviation thresholds.
 
+**Headline:** a maximum z-score threshold of 5 flags 578 seconds and catches 72.66% of attack seconds; dropping to 3 flags 4,735 seconds (8× the review queue) for under five more points of recall.
+
 **Start with:** [Findings](FINDINGS.md) · [SQL questions](sql/) · [Results](results/) · [Dashboard screenshot](screenshots/dashboard.png)
+
+CI runs all eighteen queries on every push against a small synthetic fixture with the real schema ([`scripts/make_fixture.py`](scripts/make_fixture.py)); the results in this repository come from the real data, downloaded locally.
 
 ![Attack intervals](charts/attack_intervals.png)
 
